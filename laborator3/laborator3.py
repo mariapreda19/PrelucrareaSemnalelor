@@ -126,36 +126,33 @@ def ex_3(freq: list[int], amplitude: list[float], time: np.ndarray) -> None:
     plt.savefig('plots/exercitiul3.pdf', bbox_inches='tight')
 
 
-def __main__():
 
-    """
-        Exercitiul 1
-    """
-    n = 8
-    F = create_fourier_matrix(n)
-    plot_fourier_matrix(F)
-    is_unitary = check_unitarity(F)
+"""
+    Exercitiul 1
+"""
+n = 8
+F = create_fourier_matrix(n)
+plot_fourier_matrix(F)
+is_unitary = check_unitarity(F)
 
-    if is_unitary:
-        print("It's unitary")
-    else:
-        print("It's not unitary")
+if is_unitary:
+    print("It's unitary")
+else:
+    print("It's not unitary")
 
-    """
-        Exercitiul 2
-    """
+"""
+    Exercitiul 2
+"""
 
-    ex_2_fig_1(7, np.linspace(0, 1, 1000), np.pi/2)
+ex_2_fig_1(7, np.linspace(0, 1, 1000), np.pi/2)
 
-    ex_2_fig_2(7, np.linspace(0, 1, 1000), np.pi/2)
-
-
-    """
-        Exercitiul 3
-    """
-
-    ex_3([75, 5, 20], [3, 1.5, 3], np.linspace(0, 1, 2000))
+ex_2_fig_2(7, np.linspace(0, 1, 1000), np.pi/2)
 
 
-__main__()
+"""
+    Exercitiul 3
+"""
+
+ex_3([75, 5, 20], [3, 1.5, 3], np.linspace(0, 1, 2000))
+
 
