@@ -2,19 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 import pickle
-
-def sine_signal(f: int, t: np.ndarray, phase: float) -> np.ndarray:
-    return np.sin(2 * np.pi * f * t + phase)
-
-def cosine_signal(f: int, t: np.ndarray, amplitude: float) -> np.ndarray:
-    return np.cos(2 * np.pi * f * t) * amplitude
-
-def create_fourier_matrix(n: int) -> np.ndarray:
-    fourier_matrix = np.zeros((n, n), dtype=complex)
-    for i in range(n):
-        for ii in range(n):
-            fourier_matrix[i][ii] = np.exp(-2 * np.pi * 1j * i * ii / n)
-    return fourier_matrix
+from laborator3.laborator3 import sine_signal, create_fourier_matrix
 
 def fft_vs_dft(size_of_matrix: list[int]) -> (list[float], list[float]):
     time_dft = []
@@ -48,7 +36,8 @@ def plot_fft_vs_dft(time_dft: list[float], time_fft: list[float], size_of_matrix
     plt.show()
 
 
-def generate_sampled_signals_ex2(f0: int, fs: int, A: float, phi: float, t: np.ndarray) -> (np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray):
+def generate_sampled_signals_ex2(f0: int, fs: int, A: float, phi: float, t: np.ndarray) ->\
+        (np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray):
     ts = np.linspace(0, 1, fs)
     samples = A * np.sin(2 * np.pi * f0 * ts + phi)
 
