@@ -39,6 +39,7 @@ def ex1(N: int) -> None:
         x = x / np.mean(x)
         axs[plot_number].plot(x)
 
+    plt.tight_layout()
     plt.savefig('plots/ex1.png', bbox_inches='tight')
     plt.savefig('plots/ex1.pdf', bbox_inches='tight')
     plt.plot(np.convolve(x, x))

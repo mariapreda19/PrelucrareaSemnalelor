@@ -33,7 +33,8 @@ def plot_fft_vs_dft(time_dft: list[float], time_fft: list[float], size_of_matrix
     plt.xlabel("Matrix Size")
     plt.ylabel("Time (log scale)")
     plt.title("DFT vs FFT Time Comparison")
-    plt.show()
+    plt.savefig('plots/fft_vs_dft.png')
+    plt.savefig('plots/fft_vs_dft.pdf')
 
 
 def generate_sampled_signals_ex2(f0: int, fs: int, A: float, phi: float, t: np.ndarray) ->\
@@ -95,7 +96,6 @@ def plot_sampled_signals_ex3(t: np.ndarray, signals: list, samples: np.ndarray, 
 def main_lab4() -> None:
     size_of_matrix = [128, 256, 512, 1024, 2048, 4096, 8192]
 
-    # Part 1: DFT vs FFT timing
     try:
         with open('fft_vs_dft.pickle', 'rb') as f:
             pass
@@ -104,6 +104,7 @@ def main_lab4() -> None:
         with open('fft_vs_dft.pickle', 'wb') as f:
             pickle.dump((time_dft, time_fft), f)
             plot_fft_vs_dft(time_dft, time_fft, size_of_matrix)
+
 
 
 
